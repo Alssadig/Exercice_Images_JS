@@ -1,8 +1,8 @@
 <html>
 <head>
 <script>
-function controler(){
-    if(document.getElementById('Control').checked){
+function controler1(){
+    if(document.getElementById('Control1').checked){
         document.getElementById('Image1').style.display = "block";
     } else {
         document.getElementById('Image1').style.display = "none";
@@ -11,6 +11,14 @@ function controler(){
 
 function controler2(){
     if(document.getElementById('Control2').checked){
+        document.getElementById('Image2').style.display = "block";
+    } else {
+        document.getElementById('Image2').style.display = "none";
+    }
+}
+
+function controler3(){
+    if(document.getElementById('Control3').checked){
         document.getElementById('Image3').style.display = "block";
     } else {
         document.getElementById('Image3').style.display = "none";
@@ -19,14 +27,18 @@ function controler2(){
 </script>
 </head>
 <body>
-<h1>Image</h1>
+<h1>Images</h1>
 <hr/>
-<p>Option<input type="checkbox" id="Control"></p>
-<button onclick="controler()">Check</button><br/>
+<p>Image 1<input type="checkbox" id="Control1"></p>
+<button onclick="controler1()">Check</button></button><br/>
 <img id="Image1" src="Image1.jpg" style="display: none;">
 <hr/>
-<p>Option<input type="checkbox" id="Control2"></p>
-<button onclick="controler2()">Check</button><br/>
+<p>Image 2<input type="checkbox" id="Control2"></p>
+<button onclick="controler2()">Check</button></button><br/>
+<img id="Image2" src="Image2.jpg" style="display: none;">
+<hr/>
+<p>Image 3<input type="checkbox" id="Control3"></p>
+<button onclick="controler3()">Check</button></button><br/>
 <img id="Image3" src="Image3.jpg" style="display: none;">
 </body>
 </html>
