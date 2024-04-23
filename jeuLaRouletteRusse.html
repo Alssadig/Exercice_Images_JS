@@ -1,86 +1,28 @@
-<html>
+</html>
 <head>
-<style>
-#zonedejeux {
-    background-color: antiquewhite;
-    width: 900px;
-    height: 400px;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    z-index: 1;
-}
-    
-
-h1 {
-    position: absolute;
-    top: -7px;
-    left: 320px;
-    z-index: 2;
-}
-</style>
-
 <script>
-// Variable globale
-var speed = 500;
-
-function principale() {
-    //Ajout d'un écouteur sur les touches
-    window.addEventListener('keydown', deplacement, true);
-    // Lance la fonction bouger() à intervalle de "speed"
-    enemy = setInterval(bouger, speed);
-}
-
-function bouger() {
-    // Code à créer pour faire bouger la boule enemy
-    }
-function deplacement(evt) {
-    var ballX = parseInt(document.getElementById('ball').getAttribute("cx"));
-    var ballY = parseInt(document.getElementById('ball').getAttribute("cy"));
-    switch (evt.keyCode) {
-        // Gauche
-        case 37:
-            ballX -= 15;
-            if (ballX < 15) {
-                ballX = 15;
-            }
-            document.getElementById('ball').setAttribute("cx", ballX);
-            break;
-        // Droite
-        case 39:
-            ballX += 15;
-    
-            document.getElementById('ball').setAttribute("cx", ballX);
-            break;
-        // Haut
-        case 38:
-            ballY -= 15;
-           w
-            document.getElementById('ball').setAttribute("cy", ballY);
-            break;
-        // Bas
-        case 40:
-            ballY += 15;
-            
-            document.getElementById('ball').setAttribute("cy", ballY);
-            break;
-    }
+function lancer(){
+          alert("le barillet tourne");
 }
 </script>
-</head>
-<body onload="principale()">
-<h1>Jeu la Roulette Russe</h1>
-<svg id="zonedejeux">
-    <svg id="barillet" width="400" height="400">
-<circle cx="200" cy="200" r="150" fill="gray" stroke="black" stroke-width="2" />
-<circle cx="200" cy="75" r="18" fill="black" id="trou1" />
-<circle cx="320" cy="200" r="18" fill="black" id="trou6" />
-<circle cx="250" cy="300" r="18" fill="black" id="trou5" />
-<circle cx="150" cy="300" r="18" fill="black" id="trou4" />
 
-<circle cx="80" cy="235" r="18" fill="black" id="trou3" />
-<circle cx="115" cy="120" r="18" fill="black" id="trou2" />
-        <circle cx="270" cy="110" r="18" fill="black" id="trou7" />
-</svg>
+
+</head>
+<body>
+	<h1>Roulette Russe</h1>
+
+	<svg width=200 height=200 style="background-color:antiquewhite">
+	<circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
+	<circle id="Br1" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
+	<circle id="Br2" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+	<circle id="Br3" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+	<circle id="Br4" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+	<circle id="Br5" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+	<circle id="Br6" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
+	<circle cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
+	</svg>	
+	
+	<button onclick="lancer()">Jouer</button>	
+	
 </body>
 </html>
