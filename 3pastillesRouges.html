@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var redCount = 0; 
+        var winnings = 0; 
+
+        function lancer() {
+            if (redCount > 3) {
+                alert("Vous ne pouvez pas sélectionner plus de 3 pastilles rouges !");
+                return;
+            }
+
+            var Val = Math.floor((Math.random() * 6) + 1);
+            if (document.getElementById("Br" + Val).style.fill == "red") {
+                alert("Perdu !");
+                winnings = 0; 
+            } else {
+                alert("Gagné !");
+                winnings++; 
+            }
+
+            document.getElementById("Br" + Val).style.fill = "blue";
+
+            redCount = 0; 
+            for (var i = 1; i <= 6; i++) {
+                if (document.getElementById("Br" + i).style.fill == "red") {
+                    redCount++;
+                }
+            }
+        }
+
+        function trou1() {
+            toggleColor("Br1");
+        }
+
+        function trou2() {
+            toggleColor("Br2");
+        }
+
+        function trou3() {
+            toggleColor("Br3");
+        }
+
+        function trou4() {
+            toggleColor("Br4");
+        }
+
+        function trou5() {
+            toggleColor("Br5");
+        }
+
+        function trou6() {
+            toggleColor("Br6");
+        }
+
+        function toggleColor(circleId) {
+            var circle = document.getElementById(circleId);
+            if (circle.style.fill == "red") {
+                circle.style.fill = "gray";
+                redCount--;
+            } else {
+                if (redCount >= 3) {
+                    alert("Vous ne pouvez pas sélectionner plus de 3 pastilles rouges !");
+                    return;
+                }
+                circle.style.fill = "red";
+                redCount++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Roulette Russe</h1>
+
+    <svg width=200 height=200 style="background-color:antiquewhite">
+        <circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
+        <circle onclick="trou1()" id="Br1" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="trou2()" id="Br2" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="trou6()" id="Br6" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="trou5()" id="Br5" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="trou3()" id="Br3" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="trou4()" id="Br4" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
+    </svg>
+
+    <button onclick="lancer()">Jouer</button>
+</body>
+</html>
